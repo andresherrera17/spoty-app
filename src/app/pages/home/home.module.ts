@@ -8,6 +8,7 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { ChatComponent } from './chat/chat.component';
 import { MainComponent } from './main/main.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
+import { SharedModule } from 'src/app/components/shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TarjetasComponent } from './tarjetas/tarjetas.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }
