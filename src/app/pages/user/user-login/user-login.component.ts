@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,13 +9,16 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(private _serviceAuth: AuthService) { }
+  constructor(private _serviceAuth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    this._serviceAuth.login();
+    this._serviceAuth.login().then(() => {
+      this._serviceAuth.getTokenSpotify();
+      this.router.navigate(['home']);
+    });
   }
 
 }
