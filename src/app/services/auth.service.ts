@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app'
 import { IUser } from '../interfaces/user.interface';
@@ -10,7 +11,10 @@ export class AuthService {
 
   user: IUser = {} as IUser;
 
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    private http: HttpClient
+  ) {
     this.getUser();
   }
 
@@ -27,6 +31,9 @@ export class AuthService {
       this.user.nombre = user.displayName;
       this.user.email = user.email;
     });
+  }
+
+  getTokenSpotify() {
   }
 
   logout() {
