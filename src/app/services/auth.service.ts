@@ -51,6 +51,7 @@ export class AuthService {
 
   logout() {
     this.user = {} as IUser;
+    sessionStorage.removeItem('token');
     return this.afAuth.signOut();
   }
 
