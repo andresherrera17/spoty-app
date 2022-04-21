@@ -11,10 +11,7 @@ export class SpotifyService {
 
   urlSpotify: string = environment.spotify.url;
 
-  user: any;
-
   constructor(private http: HttpClient) { }
-
 
   getNewReleases() {
     return this.http.get<any[]>(`${this.urlSpotify}browse/new-releases?limit=20`)
