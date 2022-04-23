@@ -15,7 +15,7 @@ export class SpotifyService {
 
   getNewReleases() {
     return this.http.get<any[]>(`${this.urlSpotify}browse/new-releases?limit=20`)
-      .pipe(map((data: any) => data['albums'].item));
+      .pipe(map((data: any) => data['albums'].items));
   }
 
 }

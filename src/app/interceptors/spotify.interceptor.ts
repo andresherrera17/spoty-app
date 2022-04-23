@@ -13,7 +13,6 @@ export class SpotifyInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    debugger;
     const token: string | null = sessionStorage.getItem('token');
     let requestApi = request;
     if (token) {

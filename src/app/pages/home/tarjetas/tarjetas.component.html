@@ -1,1 +1,14 @@
-<p>tarjetas works!</p>
+<div class="row m-5">
+  <div class="card col-md-4 mt-4" style="width: 18rem;" *ngFor="let item of items">
+    <img [src]="item.images | noImagen" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">
+        <span *ngFor="let artist of item.artists">
+          {{ artist.name }}
+        </span>
+      </p>
+      <a href="#" class="btn btn-primary">Ver más</a>
+    </div>
+  </div>
+</div>

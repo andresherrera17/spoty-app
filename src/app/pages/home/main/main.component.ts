@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
       {
         next: (data) => {
           this.nuevasCanciones = data;
+          console.log(this.nuevasCanciones)
         },
         error: (error) => {
 
