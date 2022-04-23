@@ -19,11 +19,11 @@ export class SpotifyService {
   }
 
   getArtist(id: string) {
-    return this.http.get(`${this.urlSpotify}artist/${id}`);
+    return this.http.get<any[]>(`${this.urlSpotify}artists/${id}`);
   }
 
   getTopTracks(id: string) {
-    return this.http.get(`${this.urlSpotify}artist/${id}/top-tracks`);
+    return this.http.get<any[]>(`${this.urlSpotify}artists/${id}/top-tracks`);
   }
 
 }

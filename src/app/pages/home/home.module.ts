@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { SpotifyInterceptor } from 'src/app/interceptors/spotify.interceptor';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    RouterModule,
     SharedModule,
     HttpClientModule,
     PipesModule

@@ -4,6 +4,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { AuthService } from 'src/app/services/auth.service';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [AuthService],
   exports: [
