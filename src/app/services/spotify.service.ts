@@ -23,7 +23,7 @@ export class SpotifyService {
   }
 
   getTopTracks(id: string) {
-    return this.http.get<any[]>(`${this.urlSpotify}artists/${id}/top-tracks`);
+    return this.http.get<any[]>(`${this.urlSpotify}artists/${id}/top-tracks?country=us`);
   }
 
 }

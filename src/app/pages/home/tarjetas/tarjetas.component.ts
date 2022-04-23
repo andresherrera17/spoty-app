@@ -15,7 +15,8 @@ export class TarjetasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  verArtista() {
-    this.router.navigate(['/home/artist']);
+  verArtista(artists: any[]) {
+    let id = artists[0].id;
+    this.router.navigate(['/home/artista', id]);
   }
 }
