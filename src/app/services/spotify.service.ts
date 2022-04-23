@@ -18,4 +18,12 @@ export class SpotifyService {
       .pipe(map((data: any) => data['albums'].items));
   }
 
+  getArtist(id: string) {
+    return this.http.get(`${this.urlSpotify}artist/${id}`);
+  }
+
+  getTopTracks(id: string) {
+    return this.http.get(`${this.urlSpotify}artist/${id}/top-tracks`);
+  }
+
 }
