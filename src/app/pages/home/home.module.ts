@@ -14,6 +14,8 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 import { SpotifyInterceptor } from 'src/app/interceptors/spotify.interceptor';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ChatService } from 'src/app/services/chat.service';
 
 
 @NgModule({
@@ -31,10 +33,12 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     SharedModule,
     HttpClientModule,
-    PipesModule
+    PipesModule,
+    FormsModule
   ],
   providers: [
     SpotifyService,
+    ChatService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: SpotifyInterceptor,
